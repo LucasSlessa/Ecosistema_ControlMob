@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Localizar Endereço no Mapa</title>
+    <style>
+        /* Definir altura do mapa */
+        #map {
+            height: 100vh;
+            width: 100%;
+        }
+        #input-container {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 10;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Container para o campo de input e botão -->
+    <div id="input-container">
+        <label for="address-input">Digite um endereço:</label>
+        <input type="text" id="address-input" placeholder="Ex: Avenida Paulista, São Paulo, SP" />
+        <button onclick="geocodeAddress()">Localizar no Mapa</button>
+    </div>
+
+    <!-- Div do mapa -->
+    <div id="map"></div>
+
+    <script>
+        let map;
+        let geocoder;
+        let marker;
+
+        function initMap() {
+            // Definindo localização inicial do mapa
+            const initialLocation = { lat: -23.55052, lng: -46.633308 }; // São Paulo
+
+            // Criando o mapa
+            map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 12,
+                center: initialLocation,
+            });
+
+            // Inicializando o geocoder
+            geocoder = new google.maps.Geocoder();
+        }
+
+        // Função para geocodificar o endereço e localizá-lo no mapa
+        function geocodeAddress() {
+            const address = document.getElementById("address-input").value;
+
+            if (address) {
+                geocoder.geocode({ address: address }, (results, status) => {
+                    if (status === "OK") {
+                        // Atualiza o mapa para a localização encontrada
+                        map.setCenter(results[0].geometry.location);
+                        map.setZoom(15);
+
+                        // Cria um marcador no endereço encontrado
+                        if (marker) {
+                            marker.setMap(null); // Remove marcador anterior
+                        }
+
+                        marker = new google.maps.Marker({
+                            map: map,
+                            position: results[0].geometry.location,
+                        });
+
+                        // Exibe o nome do local no marcador
+                        marker.setTitle(results[0].formatted_address);
+                    } else {
+                        alert("Endereço não encontrado: " + status);
+                    }
+                });
+            } else {
+                alert("Por favor, digite um endereço.");
+            }
+        }
+    </script>
+
+    <!-- Carregar a API do Google Maps com sua chave -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlJe3pOkpStzU_L5_pQNcoqe8dx539f9w&callback=initMap" async defer></script>
+</body>
+</html>
