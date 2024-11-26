@@ -113,6 +113,23 @@ imgProfile.addEventListener('click', function () {
 })
 
 
+const toggleButton = document.getElementById('toggle-dark-mode');
+const htmlElement = document.documentElement;
+
+toggleButton.addEventListener('click', () => {
+    htmlElement.classList.toggle('dark-mode');
+    const isDarkMode = htmlElement.classList.contains('dark-mode');
+    // Salva a preferência no localStorage
+    localStorage.setItem('darkMode', isDarkMode);
+});
+
+// Mantém a preferência ao recarregar
+window.addEventListener('load', () => {
+    const isDarkMode = localStorage.getItem('darkMode') === 'true';
+    if (isDarkMode) {
+        htmlElement.classList.add('dark-mode');
+    }
+});
 
 
 // MENU
