@@ -122,6 +122,7 @@ var options = {
   series: [{
     name: 'Clientes',
     data: [102, 88, 66, 79]  // 4 valores para 4 barras
+	
   }],
   chart: {
     height: 350,
