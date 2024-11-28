@@ -7,7 +7,6 @@
 	<link rel="stylesheet" href="css/styles.css">
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 
-  
 	<title>Ecosistema</title>
 </head>
 <body>
@@ -18,7 +17,7 @@
 		<ul class="side-menu">
 
 
-			<li><a href="" class="active"><i class='bx bxs-dashboard icon' ></i>Nosso Ecosistema</a></li>
+			<li><a href="index.html" class="active"><i class='bx bxs-dashboard icon' ></i>Nosso Ecosistema</a></li>
 			<li><a href="dashboard.html" class="active2"><i class='bx bx-line-chart icon low' ></i>DASHBOARD</a></li>
 
 
@@ -152,7 +151,6 @@
 
 	<!-- NAVBAR -->
 	<section id="content">
-		<!-- NAVBAR -->
 		<nav>
 			<i class='bx bx-menu toggle-sidebar' ></i>
 			<form action="#">
@@ -169,53 +167,27 @@
 				<i class='bx bxs-message-square-dots icon' ></i>
 				<span class="badge">8</span>
 			</a>
-			
 			<span class="divider"></span>
 			<a href="#" class="nav-link" id="toggle-dark-mode" >
 				<i class='bx bx-moon icon' ></i>
-				
 			</a>
 
 			<div class="profile">
 				<img src="images/favicon.ico" alt="">
-				
 			</div>
 		</nav>
 		<!-- NAVBAR -->
 
 		<!-- MAIN -->
 		<main>
-			<h1 class="title">PRODUTOS</h1>
+			<h1 class="title">DASHBOARD</h1>
 			<ul class="breadcrumbs">
 				<li><a href="#">Home</a></li>
 				<li class="divider">/</li>
 				<li><a href="#" class="active">PRODUTOS</a></li>
 			</ul>
-			<div class="info-data" href="">
-				<div class="card" onclick="window.location.href='dashboardcolab.html'" style="cursor: pointer;">
-					<div class="head">
-						<div>
-							<h2>COLABORADORES</h2>
-							<p>Gestão de equipes externas</p>
-						</div>
-						<i class='bx bx-trending-up icon'></i>
-					</div>
-					<span class="progress" data-value="10%"></span>
-				</div>
-				
-				
-				<div class="card" onclick="window.location.href='dashboardentregas.html'" style="cursor: pointer;">
-					<div class="head">
-						<div>
-							<h2>ENTREGAS</h2>
-							<p>Gestão de equipes externas</p>
-						</div>
-						<i class='bx bx-trending-down icon down' ></i>
-					</div>
-					<span class="progress" data-value="100%"></span>
-					
-				</div>
-				<div class="card" onclick="window.location.href='dashboardserv.html'" style="cursor: pointer;">
+			<div class="info-data">
+				<div class="card">
 					<div class="head">
 						<div>
 							<h2>SERVIÇOS</h2>
@@ -223,95 +195,53 @@
 						</div>
 						<i class='bx bx-trending-up icon' ></i>
 					</div>
-					<span class="progress" data-value="40%"></span>
-					
+					<span class="progress" data-value="10%"></span>
 				</div>
-				<div class="card" onclick="window.location.href='dashboardwms.html'" style="cursor: pointer;">
-					<div class="head">
-						<div>
-							<h2>WMS</h2>
-							<p>Armazenagem</p>
-						</div>
-						<i class='bx bx-trending-up icon' ></i>
-            
-					</div>
-					<span class="progress" data-value="20%"></span>
-					
-				</div>
+				<!-- Outros cards omitidos para simplificação -->
 			</div>
 
-      <!-- ------------------------- -->
+			<!-- ------------------------- -->
 
 			<div class="data">
 				<div class="content-data">
 					<div class="head">
-						<h3>Top Sales   <i class='bx bx-trending-up icon' ></i></h3>
-            
-						
+						<h3>Top Sales <i class='bx bx-trending-up icon' ></i></h3>
 					</div>
 					<div class="chart">
 						<div id="chart"></div>
 					</div>
 				</div>
 
-
-        <!-- ------------------------- -->
+				<!-- Novo gráfico de barras -->
 				<div class="content-data">
 					<div class="head">
-						<h3>Como navegar</h3>
-						<div class="menu">
-							<i class='bx bx-dots-horizontal-rounded icon'></i>
-							<ul class="menu-link">
-								<li><a href="#">Edit</a></li>
-								<li><a href="#">Save</a></li>
-								<li><a href="#">Remove</a></li>
-							</ul>
-						</div>
+						<h3>Vendas por Região <i class='bx bx-bar-chart-alt icon' ></i></h3>
 					</div>
-					<div class="chat-box">
-						<p class="day"><span>Today</span></p>
-						<div class="msg">
-							<img src="images/favicon.ico" alt="">
-							<div class="chat">
-								<div class="profile">
-									<span class="username">ControlMob</span>
-									<span class="time">18:30</span>
-								</div>
-								<p>Seja Bem-vindo ao Control Mob</p>
-							</div>
-						</div>
-						<div class="msg me">
-							<div class="chat">
-								<div class="profile">
-									<span class="time">18:30</span>
-								</div>
-								<p>Esse e um ecosistema para que voce possa conhecer um pouco do nossos Softwares</p>
-							</div>
-						</div>
-						<div class="msg me">
-							<div class="chat">
-								<div class="profile">
-									<span class="time">18:30</span>
-								</div>
-								<p>Voce pode se guiar pelo menu a esquerda clicando em uma da opçoes</p>
-							</div>
-						</div>
-						<div class="msg me">
-							<div class="chat">
-								<div class="profile">
-									<span class="time">18:30</span>
-								</div>
-								<p>Seja bem vindo a nossa familia</p>
-							</div>
-						</div>
+					<div class="chart">
+						<div id="bar-chart"></div>
 					</div>
-					<form action="#">
-						<div class="form-group">
-							<input type="text" placeholder="Type...">
-							<button type="submit" class="btn-send"><i class='bx bxs-send' ></i></button>
-						</div>
-					</form>
 				</div>
+
+				<!-- Novo gráfico de linhas -->
+				<div class="content-data">
+					<div class="head">
+						<h3>Desempenho ao Longo do Tempo <i class='bx bx-line-chart icon' ></i></h3>
+					</div>
+					<div class="chart">
+						<div id="line-chart"></div>
+					</div>
+				</div>
+
+				<!-- Novo gráfico de pizza -->
+				<div class="content-data">
+					<div class="head">
+						<h3>Participação de Mercado <i class='bx bx-pie-chart-alt icon' ></i></h3>
+					</div>
+					<div class="chart">
+						<div id="pie-chart"></div>
+					</div>
+				</div>
+
 			</div>
 		</main>
 		<!-- MAIN -->
@@ -320,5 +250,73 @@
 
 	<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 	<script src="js/scripts.js"></script>
+	<script>
+		// Gráfico de vendas
+		var options = {
+			chart: {
+				type: 'line',
+				height: 350
+			},
+			series: [{
+				name: 'Vendas',
+				data: [30, 40, 35, 50, 49, 60, 70, 91]
+			}],
+			xaxis: {
+				categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug']
+			}
+		};
+
+		var chart = new ApexCharts(document.querySelector("#chart"), options);
+		chart.render();
+
+		// Gráfico de barras
+		var barOptions = {
+			chart: {
+				type: 'bar',
+				height: 350
+			},
+			series: [{
+				name: 'Vendas por Região',
+				data: [80, 90, 100, 85, 95]
+			}],
+			xaxis: {
+				categories: ['Norte', 'Sul', 'Leste', 'Oeste', 'Centro']
+			}
+		};
+
+		var barChart = new ApexCharts(document.querySelector("#bar-chart"), barOptions);
+		barChart.render();
+
+		// Gráfico de linha
+		var lineOptions = {
+			chart: {
+				type: 'line',
+				height: 350
+			},
+			series: [{
+				name: 'Desempenho',
+				data: [10, 15, 25, 40, 35, 50, 70, 90]
+			}],
+			xaxis: {
+				categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug']
+			}
+		};
+
+		var lineChart = new ApexCharts(document.querySelector("#line-chart"), lineOptions);
+		lineChart.render();
+
+		// Gráfico de pizza
+		var pieOptions = {
+			chart: {
+				type: 'pie',
+				height: 350
+			},
+			series: [30, 40, 20, 10],
+			labels: ['Produto A', 'Produto B', 'Produto C', 'Produto D']
+		};
+
+		var pieChart = new ApexCharts(document.querySelector("#pie-chart"), pieOptions);
+		pieChart.render();
+	</script>
 </body>
 </html>

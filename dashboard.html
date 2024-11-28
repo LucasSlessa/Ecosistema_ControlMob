@@ -229,6 +229,15 @@
 						<div id="pie-chart"></div>
 					</div>
 				</div>
+				<!-- Novo gráfico de pizza -->
+				<div class="content-data">
+					<div class="head">
+						<h3>Financeiro <i class='bx bx-pie-chart-alt icon' ></i></h3>
+					</div>
+					<div class="chart">
+						<div id="pie-chart2"></div>
+					</div>
+				</div>
 
 			</div>
 		</main>
@@ -256,6 +265,7 @@
 
 		var chart = new ApexCharts(document.querySelector("#chart"), options);
 		chart.render();
+	
 
 		// Gráfico de barras
 		var barOptions = {
@@ -302,8 +312,23 @@
 			series: [30, 40, 20, 10],
 			labels: ['Produto A', 'Produto B', 'Produto C', 'Produto D']
 		};
+		
 
 		var pieChart = new ApexCharts(document.querySelector("#pie-chart"), pieOptions);
+		pieChart.render();
+
+		// Gráfico de pizza
+		var pieOptions = {
+			chart: {
+				type: 'pie',
+				height: 350
+			},
+			series: [70, 10, 20, 5],
+			labels: ['Produto A', 'Produto B', 'Produto C', 'Produto D']
+		};
+		
+
+		var pieChart = new ApexCharts(document.querySelector("#pie-chart2"), pieOptions);
 		pieChart.render();
 	</script>
 </body>
