@@ -218,3 +218,33 @@ const allProgress = document.querySelectorAll('main .card .progress');
 allProgress.forEach(item => {
   item.style.setProperty('--value', item.dataset.value);
 });
+
+
+   // Gráfico de Vendas
+   const salesCtx = document.getElementById('salesChart').getContext('2d');
+   new Chart(salesCtx, {
+       type: 'line',
+       data: {
+           labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun'],
+           datasets: [{
+               label: 'Vendas',
+               data: [12, 19, 3, 5, 2, 3],
+               borderColor: '#4A90E2',
+               backgroundColor: 'rgba(74, 144, 226, 0.2)'
+           }]
+       }
+   });
+
+   // Gráfico de Clientes
+   const clientCtx = document.getElementById('clientChart').getContext('2d');
+   new Chart(clientCtx, {
+       type: 'pie',
+       data: {
+           labels: ['Novos', 'Recorrentes', 'Inativos'],
+           datasets: [{
+               data: [45, 35, 20],
+               backgroundColor: ['#4A90E2', '#27AE60', '#EB5757']
+           }]
+       }
+   });
+
